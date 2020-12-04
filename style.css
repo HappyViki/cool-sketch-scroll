@@ -1,0 +1,186 @@
+/* Font */
+
+body, button, p {
+	color: #1b1209;
+	font-size: 1rem;
+	font-family: 'The Girl Next Door', cursive;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+/* Images */
+
+.overlay img {
+  display: inline-block;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.woman {
+	display: block;
+	position: absolute;
+	width: 500px;
+	top: -100px;
+	left: -300px;
+}
+
+img.flower {
+	display: block;
+	position: absolute;
+	width: 500px;
+	top: -100px;
+	right: -200px;
+}
+
+/* Variables */
+
+body {
+	--radius: 8px;
+	--color-primary: #cc9900;
+}
+
+/* Basics */
+
+body {
+	margin: 0;
+	background: #FAF0DC;
+}
+
+main {
+	padding: 8px;
+	overflow: hidden;
+}
+
+.overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+/* Header */
+
+header {
+	text-align: center;
+}
+
+/* Panels */
+
+.panel {
+	position: relative;
+	padding: 24px;
+	margin-bottom: 24px;
+}
+
+.border-primary {
+	position: relative;
+	border: 5px solid var(--color-primary);
+	border-radius: var(--radius);
+	transform: rotate(2deg);
+	background: #fff;
+}
+
+.border-secondary {
+	position: relative;
+	border: 5px double #c4cace;
+	border-radius: 16px;
+	transform: rotate(3deg);
+}
+
+.border-secondary::after {
+  content: "";
+	background: url('grunge-corner.svg') bottom right no-repeat;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.panel:nth-child(odd) .border-secondary::after {
+	background: url('grunge-corner2.svg') bottom left no-repeat;
+}
+
+.panel .content {
+	padding: 32px;
+	transform: rotate(-5deg);
+}
+
+/* Elements */
+
+.call-to-action {
+	position: absolute;
+	background: #fff;
+	padding: 8px 16px;
+	font-size: 1.5rem;
+	transform: rotate(-3deg);
+	border: 3px solid var(--color-primary);
+	border-radius: var(--radius);
+	right: 0;
+	bottom: -40px;
+}
+
+.call-to-action:hover {
+	background: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 992px) {
+	/* Desktop Font */
+
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	/* Desktop Basics */
+
+	main {
+		margin: 10vh 30vw;
+		overflow: visible;
+	}
+
+	/* Desktop Header */
+
+	h1 span {
+		display: inline-block;
+	}
+
+	.word-cool {
+		transform: translate(5px, 5px) rotate(2deg);
+	}
+
+	.word-sketch {
+		transform: translate(-5px, 5px) rotate(-2deg);
+	}
+
+	.word-scroll {
+		transform: translate(5px, -5px) rotate(1deg);
+	}
+
+	/* Desktop Elements */
+
+	.call-to-action {
+		right: -70px;
+	}
+}
