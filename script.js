@@ -1,3 +1,28 @@
+let firstTimeAtMiddle = true
+let firstTimeAtBottom = true
+
+
+window.onscroll = function(ev) {
+		if ((firstTimeAtMiddle && window.innerHeight + window.scrollY) >= document.body.offsetHeight/2) {
+				// you're at the bottom of the page
+				console.log("at middle");
+				document.querySelectorAll('.overlay img').forEach(
+					sketch => sketch.classList.toggle('translucent')
+				)
+
+				firstTimeAtMiddle = false
+		}
+    if ((firstTimeAtBottom && window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // you're at the bottom of the page
+				console.log("at bottom");
+				document.querySelectorAll('.sketch, .corner, .corner.img-6').forEach(
+					sketch => sketch.classList.toggle('fade')
+				)
+
+				firstTimeAtBottom = false
+    }
+};
+
 // const browserWidth = window.innerWidth
 // || document.documentElement.clientWidth
 // || document.body.clientWidth

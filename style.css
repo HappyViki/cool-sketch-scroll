@@ -9,6 +9,7 @@ body, button, p {
 
 h1, h2 {
 	font-family: 'Roboto Slab', serif;
+	color: #087f23;
 }
 
 h1 {
@@ -21,9 +22,47 @@ h2 {
 
 /* Images */
 
-.overlay img {
+.overlay {
+	position: relative;
+	z-index: -1;
+}
+
+.overlay .img-1, .overlay .img-2 {
   display: inline-block;
   animation: rotate 60s linear infinite;
+}
+
+.overlay .img-3, .overlay .img-4, .overlay .img-5 {
+	position: absolute;
+	width: 500px;
+}
+
+.overlay .img-3 {
+	top: 1%;
+	left: 1%;
+}
+
+.overlay .img-4 {
+	top: 50%;
+	left: 10%;
+}
+
+.overlay .img-5 {
+	top: 20%;
+	left: 80%;
+}
+
+.overlay .img-5 {
+	top: 20%;
+	left: 80%;
+}
+
+.overlay .corner {
+	opacity: 0.5;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	position: absolute;
 }
 
 @keyframes rotate {
@@ -46,6 +85,19 @@ img.flower {
 	width: 500px;
 	top: -100px;
 	right: -200px;
+}
+
+.overlay img {
+	opacity: 1;
+	transition: opacity 1.5s;
+}
+
+.overlay img.translucent {
+	opacity: 0.2;
+}
+
+.overlay img.fade {
+	opacity: 0;
 }
 
 /* Variables */
@@ -95,16 +147,35 @@ header {
 	border-radius: var(--radius);
 	transform: rotate(2deg);
 	background: #fff;
+	border-width: 3px 4px 3px 5px;
+	border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
 }
 
 .border-secondary {
 	position: relative;
-	border: 5px double #BCA1E3;
+	border: 5px solid #BCA1E3;
 	border-radius: 16px;
 	transform: rotate(3deg);
+	border-width: 3px 4px 3px 5px;
+	border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
 }
 
 .border-secondary::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+	border: solid black;
+	border-color: #757575;
+	border-width: 3px 4px 3px 5px;
+	border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+	transform: rotate(-7deg);
+}
+
+/* .border-secondary::after {
   content: "";
 	background: url('grunge-corner.svg') bottom right no-repeat;
   opacity: 0.3;
@@ -118,7 +189,7 @@ header {
 
 .panel:nth-child(odd) .border-secondary::after {
 	background: url('grunge-corner2.svg') bottom left no-repeat;
-}
+} */
 
 .panel .content {
 	padding: 32px;
