@@ -9,7 +9,7 @@ body, button, p {
 
 h1, h2 {
 	font-family: 'Roboto Slab', serif;
-	color: #087f23;
+	color: var(--color-primary);
 }
 
 h1 {
@@ -116,6 +116,7 @@ body {
 
 main {
 	padding: 8px;
+	padding-top: 0;
 	overflow: hidden;
 }
 
@@ -131,70 +132,17 @@ main {
 
 header {
 	text-align: center;
+	padding: 0.5rem;
+	background: #fff;
+}
+
+header h1 {
+	margin: 0;
 }
 
 /* Panels */
 
-.panel {
-	position: relative;
-	padding: 24px;
-	margin-bottom: 24px;
-}
 
-.border-primary {
-	position: relative;
-	border: 5px solid var(--color-primary);
-	border-radius: var(--radius);
-	transform: rotate(2deg);
-	background: #fff;
-	border-width: 3px 4px 3px 5px;
-	border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-}
-
-.border-secondary {
-	position: relative;
-	border: 5px solid #BCA1E3;
-	border-radius: 16px;
-	transform: rotate(3deg);
-	border-width: 3px 4px 3px 5px;
-	border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-}
-
-.border-secondary::after {
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-	border: solid black;
-	border-color: #757575;
-	border-width: 3px 4px 3px 5px;
-	border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-	transform: rotate(-7deg);
-}
-
-/* .border-secondary::after {
-  content: "";
-	background: url('grunge-corner.svg') bottom right no-repeat;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-.panel:nth-child(odd) .border-secondary::after {
-	background: url('grunge-corner2.svg') bottom left no-repeat;
-} */
-
-.panel .content {
-	padding: 32px;
-	transform: rotate(-5deg);
-}
 
 /* Elements */
 
@@ -215,6 +163,38 @@ header {
 	cursor: pointer;
 }
 
+/* Form */
+
+.form label, .form input {
+	font-family: 'Montserrat', sans-serif;
+	display: block;
+	width: 100%;
+	font-size: 1.5rem;
+	margin-bottom: 8px;
+}
+
+.form label {
+	font-weight: bold;
+}
+
+.form .submit {
+	background: #fff;
+	border: 3px solid var(--color-primary);
+	border-radius: var(--radius);
+}
+
+.form .submit:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.form input {
+	position: relative;
+	border: 5px solid #757575;
+	border-width: 3px 4px 3px 5px;
+	border-radius: 2% 40% 43% 5%/41% 35% 13% 10%;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 992px) {
@@ -231,7 +211,7 @@ header {
 	/* Desktop Basics */
 
 	main {
-		margin: 10vh 30vw;
+		margin: 8px 30vw;
 		overflow: visible;
 	}
 

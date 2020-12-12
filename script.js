@@ -15,7 +15,7 @@ window.onscroll = function(ev) {
     if ((firstTimeAtBottom && window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         // you're at the bottom of the page
 				console.log("at bottom");
-				document.querySelectorAll('.sketch, .corner, .corner.img-6').forEach(
+				document.querySelectorAll('.overlay img').forEach(
 					sketch => sketch.classList.toggle('fade')
 				)
 
